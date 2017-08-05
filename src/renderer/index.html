@@ -10,13 +10,16 @@
 <script type="text/jsx">
   import React from 'react'
   import ReactDOM from 'react-dom'
+  import Route from 'react-router-dom/HashRouter'
   import {AppContainer} from 'react-hot-loader'
 
   const render = () => {
     const App = require('./app').default
     ReactDOM.render(
       <AppContainer>
-        <App />
+        <Route>
+          <App />
+        </Route>
       </AppContainer>,
       document.getElementById('App'))
   }
