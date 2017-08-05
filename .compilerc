@@ -1,0 +1,26 @@
+{
+  "env": {
+    "development": {
+      "application/javascript": {
+        "presets": [
+          ["env", { "targets": { "electron": "1.6.11" } }],
+          "stage-0",
+          "react"
+        ],
+        "plugins": ["transform-decorators-legacy", "react-hot-loader/babel"],
+        "sourceMaps": "inline"
+      }
+    },
+    "production": {
+      "application/javascript": {
+        "presets": [
+          ["env", { "targets": { "electron": "1.6.11" } }],
+          "stage-0",
+          "react"
+        ],
+        "plugins": ["transform-decorators-legacy"],
+        "sourceMaps": "none"
+      }
+    }
+  }
+}
