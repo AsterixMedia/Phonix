@@ -11,15 +11,22 @@
   import React from 'react'
   import ReactDOM from 'react-dom'
   import Route from 'react-router-dom/HashRouter'
-  import {AppContainer} from 'react-hot-loader'
+  import { Provider } from 'react-redux'
+  import { AppContainer } from 'react-hot-loader'
+
+  import configureStore from './store'
+
+  const store = configureStore({})
 
   const render = () => {
     const App = require('./app').default
     ReactDOM.render(
       <AppContainer>
-        <Route>
-          <App />
-        </Route>
+        <Provider store={store}>
+          <Route>
+            <App />
+          </Route>
+        </Provider>
       </AppContainer>,
       document.getElementById('App'))
   }
