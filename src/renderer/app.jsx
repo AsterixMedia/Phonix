@@ -9,6 +9,7 @@ import ExamplePage from './pages/example'
 class App extends React.Component {
   render = () =>
     <div>
+      <h2>Welcome to React!</h2>
       <Helmet defaultTitle='Phonix'
         titleTemplate='Phonix - %s' />
       <Switch>
