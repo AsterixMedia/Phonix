@@ -8,19 +8,31 @@ import reducers from '../reducers'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const history = createHistory()
-const middlewares = [thunk, routerMiddleware(history)]
 
-const configureStore = preloadedState => {
-  const store = createStore(
-    reducers,
-    preloadedState,
-    composeEnhancers(
-      applyMiddleware(...middlewares)
-    )
+const prodMiddlewares = [
+  thunk,
+  routerMiddleware(history)
+]
+
+const devMiddleWares = [
+  require('redux-immutable-state-invariant').default(),
+  require('redux-logger').default
+]
+
+const middlewares = process.env.NODE_ENV !== 'production' ? [
+  ...prodMiddlewares,
+  ...devMiddleWares
+] : [
+  ...prodMiddlewares
+]
+
+const configureStore = preloadedState => createStore(
+  reducers,
+  preloadedState,
+  composeEnhancers(
+    applyMiddleware(...middlewares)
   )
-
-  return store
-}
+)
 
 export {
   configureStore,
