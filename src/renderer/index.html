@@ -14,10 +14,15 @@
   import { Provider } from 'react-redux'
   import { Provider as RebassProvider } from 'rebass'
   import { AppContainer } from 'react-hot-loader'
+  import {
+    replayActionRenderer,
+    getInitialStateRenderer
+  } from 'electron-redux'
 
   import { configureStore, history } from './store'
 
-  const store = configureStore({})
+  const store = configureStore(getInitialStateRenderer())
+  replayActionRenderer(store)
 
   const render = () => {
     const App = require('./app').default

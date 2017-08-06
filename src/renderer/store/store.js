@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import routerMiddleware from 'react-router-redux/middleware'
 import createHistory from 'history/createHashHistory'
+import { forwardToMain } from 'electron-redux'
 
 import reducers from '../reducers'
 
@@ -10,6 +11,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const history = createHistory()
 
 const prodMiddlewares = [
+  forwardToMain,
   thunk,
   routerMiddleware(history)
 ]

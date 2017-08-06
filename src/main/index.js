@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from 'electron'
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import { enableLiveReload } from 'electron-compile'
+import { replayActionMain } from 'electron-redux'
+
+import createStore from './store'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -9,6 +12,9 @@ let mainWindow
 const isDevMode = process.execPath.match(/[\\/]electron/)
 
 if (isDevMode) enableLiveReload({strategy: 'react-hmr'})
+
+const store = createStore({ ui: { xray: false } })
+replayActionMain(store)
 
 const createWindow = async () => {
   // Create the browser window.
