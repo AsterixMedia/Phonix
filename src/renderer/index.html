@@ -12,6 +12,7 @@
   import ReactDOM from 'react-dom'
   import Router from 'react-router-redux/ConnectedRouter'
   import { Provider } from 'react-redux'
+  import { Provider as RebassProvider } from 'rebass'
   import { AppContainer } from 'react-hot-loader'
 
   import { configureStore, history } from './store'
@@ -24,7 +25,9 @@
       <AppContainer>
         <Provider store={store}>
           <Router history={history}>
-            <App />
+            <RebassProvider>
+              <App />
+            </RebassProvider>
           </Router>
         </Provider>
       </AppContainer>,
