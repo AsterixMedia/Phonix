@@ -1,6 +1,6 @@
 // Example actions
-export const ADD = 'ADD'
-export const SUBSTRACT = 'SUBSTRACT'
+export const ADD = 'example/ADD'
+export const SUBSTRACT = 'example/SUBSTRACT'
 
 // Ui Actions
-export const TOGGLE_XRAY = 'TOGGLE_XRAY'
+export const UI_TOGGLE_XRAY = 'ui/TOGGLE_XRAY'

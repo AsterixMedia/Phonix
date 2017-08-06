@@ -1,4 +1,4 @@
-import { TOGGLE_XRAY } from '../actions'
+import { UI_TOGGLE_XRAY } from '../actions'
 
 const INITIAL_STATE = {
   xray: false
@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, {type}) => {
   switch (type) {
-    case TOGGLE_XRAY:
+    case UI_TOGGLE_XRAY:
       return { ...state, xray: !state.xray }
     default:
       return state
