@@ -4,7 +4,7 @@ import routerMiddleware from 'react-router-redux/middleware'
 import createHistory from 'history/createHashHistory'
 import { forwardToMain } from 'electron-redux'
 
-import reducers from '../reducers'
+import reducers from '../../common/reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 

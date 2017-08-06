@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { number, func } from 'prop-types'
 
 import Example from '../components/Example'
-import { add, substract } from '../actions'
+import { add, substract } from '../../common/actions'
 
 const mapStateToProps = state => ({
   score: state.example.score

@@ -5,7 +5,7 @@ import {
   triggerAlias
 } from 'electron-redux'
 
-import reducers from '../renderer/reducers'
+import reducers from '../common/reducers'
 
 const prodMiddlewares = [
   triggerAlias,
@@ -15,7 +15,7 @@ const prodMiddlewares = [
 
 const devMiddleWares = [
   require('redux-immutable-state-invariant').default(),
-  require('redux-logger').default
+  require('redux-node-logger')()
 ]
 
 const middlewares = process.env.NODE_ENV !== 'production' ? [

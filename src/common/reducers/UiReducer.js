@@ -1,4 +1,4 @@
-import { UI_TOGGLE_XRAY } from '../actions'
+import { UI_TOGGLE_XRAY } from '../actions/index'
 
 const INITIAL_STATE = {
   xray: false

@@ -80,6 +80,7 @@
         "eslint-plugin-react": "^7.1.0",
         "eslint-plugin-standard": "^3.0.1",
         "redux-immutable-state-invariant": "^2.0.0",
+        "redux-node-logger": "^0.1.0",
         "tern-jsx": "^1.0.2"
     }
 }
